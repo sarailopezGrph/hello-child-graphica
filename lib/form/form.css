@@ -1,0 +1,300 @@
+/**********************/
+/* FORM - NO BORRAR */
+/**********************/
+
+.form_style{
+	padding-top:0px !important;
+}
+.elementor-field-parent{
+	display: flex !important;
+	flex-wrap: wrap !important;
+}
+.form_style .elementor-field-group{
+	padding-right: calc( 10px/2 ) !important;
+	padding-left: calc( 10px/2 ) !important;
+	margin-bottom: 15px  !important;
+}
+
+
+*:focus,
+input:invalid,
+input:focus,
+select:focus{
+	box-shadow: none !important;
+	outline: none !important;
+	-webkit-box-shadow: none !important;
+}
+textarea::placeholder,
+input::placeholder{
+	opacity: 0 !important;
+}
+
+/* INPUT NORMAL */
+
+.form_style .input,/*input file*/
+.form_style input,
+.form_style select{
+	padding: 16px 20px 0 20px !important;
+	line-height: 20px !important;
+	height: 50px !important;
+}
+.form_style select{ /*select mobile*/
+	padding: 16px 50px 0 16px !important;
+	background-repeat: no-repeat;
+	background-position: 97% center;
+	background-image: url('');
+	background-size: 28px 28px;
+}
+.form_style textarea{
+	padding: 26px 20px !important;
+}
+.form_style .input, /*input file*/
+.form_style input,
+.form_style select,
+.form_style textarea{
+	border-radius: 4px 4px 1px 1px !important;
+	border: 0px !important;
+	border-bottom: 2px solid #10597A !important;
+	font-size: 16px !important;
+	font-weight: 500 !important;
+	font-family: inherit !important;
+	color: var( --e-global-color-cd45bd7 ) !important;
+	background-color: var( --e-global-color-903785f ) !important;
+}
+/* INPUT ACTIVE/FOCUS */
+
+.form_style .active input{
+	border-color: var( --e-global-color-primary ) !important;
+}
+.form_style input:focus,
+.form_style select:focus,
+.form_style textarea:focus{
+	border-color: var( --e-global-color-primary ) !important;
+}
+.form_style .active input::placeholder,
+.form_style input:focus::placeholder{
+	/*opacity: 0.5 !important;*/
+}
+.form_style .elementor-field-type-html h3{
+	margin-bottom: 15px !important;
+}
+.form_style .elementor-field-group{
+	width: 100%;
+	position: relative;
+}
+
+/* LABEL */
+
+.form_style .elementor-field-label{
+	position: absolute;
+	top: 18px;
+	left: 20px;
+	display: block;
+	transition: all .2s linear;
+	-webkit-transition: all .2s linear;
+	pointer-events: none;
+	opacity: 1;
+	font-size: 16px !important;
+	font-weight: normal !important;
+	font-family: inherit !important;
+	color: var( --e-global-color-cd45bd7 ) !important;
+}
+.form_style .elementor-field-group.active label{
+	color: var( --e-global-color-cd45bd7 ) !important;
+}
+.form_style .elementor-field-type-select .elementor-field-label,
+.form_style input:focus + label{
+	color: var( --e-global-color-cd45bd7 ) !important;
+}
+.form_style .elementor-field-group.active label,
+.elementor-field-type-select.active label,
+.form_style input:focus + label,
+.form_style textarea:focus + label{
+	top: -1px !important;
+	left: calc( 20px + 10px/2 );
+	font-size: 13px !important;
+	opacity: .8 !important;
+}
+
+.form_style .elementor-message{
+	text-align: center;
+	color: var( --e-global-color-primary );
+}
+.form_style .elementor-message{
+	margin: 50px 0 !important;
+}
+
+
+/* ACEPTANCE Y RADIO BUTTOM */
+.form_style .elementor-field-type-radio .elementor-field-option{
+	position: relative !important;
+	margin: 0 0 20px 0 !important;
+	display: block  !important;
+}
+.form_style .elementor-field-type-radio .elementor-field-option:last-child{
+	margin-bottom: 0px !important;
+}
+.form_style .elementor-field-type-radio label.elementor-field-label,
+.form_style .elementor-field-type-acceptance label.elementor-field-label{
+	opacity: 0 !important;
+	display: none;
+}
+.form_style .elementor-field-type-radio input,
+.form_style .elementor-field-type-acceptance .elementor-field-option input{
+	position: absolute !important;
+	opacity: 0 !important;
+}
+.form_style .elementor-field-type-upload .elementor-field-label, /* Input file */
+.form_style .elementor-field-type-upload.active .elementor-field-label, /* Input file */
+.form_style .elementor-field-type-radio .elementor-field-option input:checked + label,
+.form_style .elementor-field-type-radio.active .elementor-field-option input + label,
+.form_style .elementor-field-type-radio .elementor-field-option label,
+.form_style .elementor-field-type-acceptance .elementor-field-option input:checked + label,
+.form_style .elementor-field-type-acceptance .elementor-field-option label{
+	width: 100% !important;
+	padding: 0 0 0 20px !important;
+	font-size: 16px !important;
+	display: block !important;
+	position: relative !important;
+	top: inherit !important;
+	left: inherit !important;
+	bottom: inherit !important;
+	font-weight: normal !important;
+	color: var( --e-global-color-cd45bd7 ) !important;
+}
+.form_style .elementor-field-type-radio .elementor-field-option label a,
+.form_style .elementor-field-type-acceptance .elementor-field-option label a{
+	font-size: inherit !important;
+	color: var( --e-global-color-cd45bd7 ) !important;
+	line-height: inherit !important;
+	font-weight: normal !important;
+	text-transform: none !important;
+	text-decoration: underline !important;
+}
+.form_style .elementor-field-type-radio .elementor-field-option label a:hover,
+.form_style .elementor-field-type-acceptance .elementor-field-option label a:hover{
+	text-decoration: underline !important;
+}
+.form_style .elementor-field-type-radio .elementor-field-option label:before,
+.form_style .elementor-field-type-acceptance .elementor-field-option label:before{
+	content: '' !important; 
+	border: 2px solid var( --e-global-color-secondary )  !important;
+	position: absolute !important;
+	border-radius: 2px !important;
+	width: 16px !important;
+	height: 16px !important;
+	top: 5px !important;
+	left: 1px !important;
+	background-color: transparent !important;
+	transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+}
+.form_style .elementor-field-type-radio .elementor-field-option label:before{
+	border-radius: 50px !important;
+}
+.form_style .elementor-field-type-radio .elementor-field-option input:checked + label:before,
+.form_style .elementor-field-type-acceptance .elementor-field-option input:checked + label:before{
+	background-color: var( --e-global-color-secondary ) !important;
+}
+.form_style .elementor-field-type-acceptance .elementor-field-option input:checked + label:before{
+	background-image: url('/wp-content/uploads/2021/08/check.png');
+	background-repeat: no-repeat;
+	background-size: 98%; 
+	background-position: center center;
+}
+
+/* INPUT FILE */
+.form_style .elementor-field-type-upload input{
+	position: absolute !important;
+	opacity: 0 !important;
+	width: 100% !important;
+	top: 0 !important;
+	height: 0px !important;
+}
+.form_style .elementor-field-type-upload.active .elementor-field-label,
+.form_style .elementor-field-type-upload .elementor-field-label{
+	padding: 0px !important;
+	font-size: 0px !important;
+	pointer-events: inherit !important;
+}
+.form_style .elementor-field-type-upload .input{
+	width: calc( 100% - 166px );
+	vertical-align: middle;
+	font-weight: normal !important;
+	height: 50px !important;
+	overflow: hidden;
+	display: inline-block  !important;
+}
+.form_style .elementor-field-type-upload .input strong{
+	font-weight: normal !important;
+}
+/* boton de subir archivo */
+.form_style .elementor-field-type-upload .elementor-field-label span{
+	background-color: transparent;
+	border: 2px solid var( --e-global-color-secondary );
+	background-image: url('/wp-content/uploads/2021/08/upload.png');
+	background-repeat: no-repeat;
+	background-size: 27px;
+	background-position: 93% center;
+	color: var( --e-global-color-secondary ) !important;
+	width: 146px;
+	border-radius: 6px;
+	position: relative !important;
+	margin: 0 0 0px 20px !important;
+	display: inline-block  !important;
+	vertical-align: middle;
+	font-weight: normal;
+	font-size: 15px;
+	text-align: center !important;
+	padding: 0 30px 0 4px !important;
+	line-height: 46px !important;
+	height: 48px !important;
+	transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+}
+
+.form_style .elementor-field-type-upload .elementor-field-label span:hover{
+	border-color: var( --e-global-color-text );
+}
+
+/* HTML */
+.form_style .elementor-field-type-html h4{
+    text-transform: uppercase;
+    margin: 20px -20px 0 -20px  !important;
+    padding: 10px 20px !important;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    color: var( --e-global-color-cd45bd7 );
+    display: block !important;
+    background: var( --e-global-color-text );
+    border-radius: 4px;
+    
+}
+.form_style .elementor-field-type-html h5{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    margin: 20px 0 20px 0 !important;
+    color: var( --e-global-color-primary );
+}
+
+
+/* SEPARACION DE TERMINOS */
+
+.form_style .elementor-field-group-acceptance {
+	margin-top: 10px !important;
+}
+
+/* BOTON */
+
+.form_style .elementor-field-type-submit{
+	margin-top: 20px !important;
+}
+.form_style .elementor-button{
+	height: 50px !important;
+	line-height: 45px !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}

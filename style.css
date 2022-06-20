@@ -1,0 +1,225 @@
+/*
+Theme Name: Child Theme Hello Graphv
+Template: hello-elementor
+Author: Graphvity Team
+Description: Theme for Elementor page builder
+Tags: flexible-header,custom-colors,custom-menu,custom-logo,featured-images,rtl-language-support,threaded-comments,translation-ready
+Version: 3.0
+Updated: 22-03-21 16:04:05
+
+*/
+
+html{
+	overflow-x: hidden;
+}
+body{
+	position: relative;
+}
+.bread a,.bread span{
+	font-size: var(--e-global-typography-0436eee-font-size) !important;
+	font-weight: 400 !important;
+	letter-spacing: 0px !important;
+	font-family: inherit !important;
+}
+.elementor-widget-code-highlight{
+	font-size: 14px !important;
+}
+@media(max-width: 767px){
+	.paginadorPost .post-navigation__prev--title,
+	.paginadorPost .post-navigation__next--title{
+		display: none !important;
+	}
+}
+
+
+
+/* HEADER STIKY*/
+.elementor-location-header .elementor-sticky--effects a img,
+.elementor-location-header .elementor-sticky{
+	transition: all .3s linear !important;
+}
+.home .elementor-location-header .elementor-sticky{
+	background-color: var(--e-global-color-ef56cf2) !important;
+}
+.home .elementor-location-header .elementor-sticky--effects,
+.elementor-location-header .elementor-sticky--effects{
+	background-color: #041822e6 !important;
+	backdrop-filter: blur(4px) !important;
+	box-shadow: 0px 10px 25px #0010174f !important;
+	padding: 10px 30px 10px 30px !important;
+}
+.elementor-location-header .elementor-sticky--effects a img{
+	max-width: 160px !important;
+}
+.elementor-location-header .elementor-sticky--effects .menu-item a{
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+
+/* CUSTOMIZAMOS EL ICONO */
+
+@media (max-width: 1024px){
+	.menuMobile{
+		position: fixed  !important;
+		right: 20px  !important;
+		top: 12px  !important;
+	}
+	.menuMobile .e-eicon-menu-bar{
+		fill: transparent  !important;
+		color: transparent !important;
+	}
+	.menuMobile .elementor-menu-toggle .e-eicon-menu-bar{
+		background-image: url('/wp-content/uploads/2022/02/ham-custom-1.svg') !important;
+		background-repeat: no-repeat  !important;
+		background-position: center center  !important;
+		background-size: 22px  !important;
+	}
+}
+
+/* POPUP IMAGEN */
+
+.swiper-zoom-container{
+	background: #072E3F;
+	border-radius: 20px !important;
+}
+.swiper-zoom-container img{
+	box-shadow: none !important;
+}
+
+/* ETIQUETAS DE BLOG */
+
+.etiquetas-blog h5{
+	display: none !important;
+}
+.etiquetas-blog a{
+	display: inline-block !important;
+	padding: 5px 16px !important;
+	background-color: var(--e-global-color-033e01a) !important;
+	margin: 5px !important;
+	border-radius: 5px !important;
+	color: var(--e-global-color-secondary) !important;
+	text-transform: capitalize !important;
+	font-size: 14px !important;
+} 
+.etiquetas-blog a:hover{
+	color: white !important;
+	background-color: var(--e-global-color-primary) !important;
+}
+.etiquetas-blog .elementor-post-info__terms-list{
+	font-size: 0px !important;
+}
+
+/* LISTING SLIDER */
+.elementor-editor-wrapper{
+	pointer-events: none !important;
+}
+
+.h2especial span{
+	color: #FFB800 !important;
+}
+.textoAnimado span{
+	color: black;
+	display: block;
+	margin-bottom: -37px !important;
+	font-size: 120px !important;
+	-webkit-text-fill-color: #ffffff00;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: var( --e-global-color-primary );
+	word-break: break-all;
+	will-change: transform;
+	opacity: .3;
+	word-break: keep-all;
+	text-transform: capitalize !important;
+}
+
+@media (max-width: 1024px){
+	.textoAnimado span{
+		font-size: 100px !important;
+		margin-bottom: -35px !important;
+	}
+}
+
+
+@media (max-width: 768px){
+	.textoAnimado span{
+		font-size: 50px !important;
+		margin-bottom: -20px !important;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+.filosofiaItem .elementor-image-box-img{
+	position: relative !important;
+}
+.filosofiaItem .elementor-image-box-img img{
+	position: relative !important;
+	z-index: 2 !important;
+}
+.filosofiaItem .elementor-image-box-img:before{
+	content: '';
+	width: 172px;
+	height: 172px;
+	display: block;
+	position: absolute;
+	top: -22px;
+	left: -25px;
+	background-image: url('/wp-content/uploads/2021/08/luz-xss.png');
+	z-index: 1 !important;
+	opacity: 0; /*oculto por diseño*/
+}
+
+
+
+/* Blog */
+.paginadorPost .elementor-post-navigation__link__next,
+.paginadorPost .elementor-post-navigation__link__prev{
+	padding: 0 10px !important;
+}
+
+.autorPost .elementor-author-box{
+	position: relative !important;
+}
+.autorPost .elementor-author-box *{
+	z-index: 2 !important;
+}
+.autorPost .elementor-author-box:before {
+	content: '';
+	position: absolute;
+	top: -10%;
+	left: 50px;
+	width: calc(100% - 50px);
+	height: 120%;
+	background: #fff;
+	z-index: 0;
+	border-radius: 10px;
+	opacity: 0.4;
+}
+
+.autorPost .elementor-author-box__text{
+	padding: 0 20px  !important;
+}
+
+/* Filtros */
+@media(max-width: 1024px){
+	.filtrosPost{
+		width: calc(100% + 50px) !important;
+		margin: 0 -25px 0 -25px !important;
+	}
+	.filtrosPost .jet-radio-list-wrapper{
+		display: flex !important;
+		flex-flow: row nowrap !important;
+	}
+	.filtrosPost .jet-filter-items-scroll-container{
+		overflow-x: auto !important;
+		padding: 0 10px 5px 25px !important;
+	}
+}
+
