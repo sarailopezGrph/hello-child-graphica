@@ -2,49 +2,65 @@
 	/*Label*/
 	--color-label: #606060;
 	--color-label-activo: #606060;
-	--weight-label: bold;
+	--weight-label: 600;
+	--weight-label-bold: 600;
 	--weight-label-activo: bold;
-	--bottom-label:  16px;
-	--bottom-label-activo: 16px;
+	--bottom-label:  18px;
+	--bottom-label-activo: 43px;
 	--fz-label: 16px;
 	--fz-label-activo: 16px;
+	--bg-label: transparent;
+	--bg-label-activo: #fafafa;
 	
 	/*Input*/
 	--color-input: #606060;
 	--fz-input: 16px;
 	--weight-input: normal;
-	--bg-input: white;
+	--bg-input: #fafafa;
 	--height-input:  50px;
-	--warning: red;
+	--warning: #A6A6A6;
 	--color-mensaje: #606060;
 	--border-width: 1px;
 	--border-color: #A6A6A6;
+	--color-border-input-activo:#A6A6A6;
+	--color-border-input-focus:#A6A6A6;
 	--border-radio-input:  14px;
 	--box-shadow-input:  none;
 	--padding-input: 10px 10px 10px 78px;
+	--padding-input-focus: 15px;
+	--padding-input-activo: 15px;
+	--margin-bottom-input: 15px;
 
 	/*Textarea*/
 	--height-textarea: 115px;
+	--top-textarea: 10px;
+	--top-textarea-activo: -6px;
 	
 	/*Boton*/
 	--color-boton: white;
 	--height-boton: 50px;
 	--bg-boton: #3B37FE;
 	--fz-boton: 20px;
+	--color-boton-hover: white;
+	--bg-boton-hover: #4703DF;	
 
 	/*Link*/
 	--color-a:#3B37FE;
-	
-	/*Boton Hover*/
-	--color-boton-hover: white;
-	--bg-boton-hover: #2522cc;	
 
 	/* Checkbox */
 	--border-checkbox:  2px solid #606060;
-	--bg-checkbox:  white;
+	--bg-checkbox:  #fafafa;
 	--border-checkbox-activo:  2px solid #3B37FE;
 	--bg-checkbox-activo:  #3B37FE;
+
+	/*HTML*/
+	--text-transform-html: normal;
+	--font-family-html: "Barlow";
+	--color-h4-html: #606060;
+	--fz-parrafo-html: 13px;
 }
+
+/*************************************/
 
 .form_style{
 	padding-top:0px !important;
@@ -56,7 +72,7 @@
 .form_style .elementor-field-group{
 	padding-right: calc( 10px/2 ) !important;
 	padding-left: calc( 10px/2 ) !important;
-	margin-bottom: 8px  !important;
+	margin-bottom: var(--margin-bottom-input)  !important;
 	width: 100%;
 	position: relative;
 }
@@ -64,7 +80,7 @@
 /* Ocultar placeholder */
 textarea::placeholder,
 input::placeholder{
-	/*opacity: 0 !important;*/
+	opacity: 0.5 !important;
 }
 
 /* Quitar flechas al campo numerico */
@@ -173,9 +189,13 @@ select:focus{
 }
 
 
-/* **********************************************************************
+/* *****************************
  * CAMPOS
- * **********/
+ * *****************************/
+
+/*****************/
+/* INPUT NORMAL*/
+/*****************/
 .custom-a11yselect-container .custom-a11yselect-btn,
 .form_style .input,/*Input file*/
 .form_style textarea,
@@ -194,15 +214,17 @@ select:focus{
 	box-shadow: var(--box-shadow-input) !important;
 	font-size: var(--fz-input) !important;
 	font-weight: var(--weight-input) !important;
+	color: var(--color-input) !important;
 }
 
 .form_style textarea{
 	height: var(--height-textarea) !important;
-	padding: 28px 10px 10px 10px !important;
+	padding: var(--padding-input-focus) !important;
 }
 
+/*****************/
 /* LABEL NORMAL*/
-
+/*****************/
 .jet-filter-label,
 .form_style .input span,/*Input file*/
 .form_style .elementor-field-label{
@@ -217,20 +239,12 @@ select:focus{
 	pointer-events: none;
 	opacity: 1;
 	font-size: var(--fz-label) !important;
-	font-weight: var(--weight-label);
-	color: var(--color-label);
-}
-.form_style textarea + label.elementor-field-label{
-	bottom: inherit !important;
-	top: 1px !important;
-    left: calc( 10px/2 + 10px) !important;
-    border-radius: 5px;
-	background: white;
-	opacity: 1 !important;
-	display: block !important;
-	width: calc(100% - 40px);
-	padding: 10px 0 0px 0 !important;
-	
+	font-weight: var(--weight-label) !important;
+	color: var(--color-label) !important;
+	background-color: var(--bg-label) !important;
+	z-index: 9 !important;
+	padding: 0 5px !important;
+
 	display: -webkit-box !important;
 	-webkit-line-clamp: 1 !important; 
 	line-clamp: 1 !important; 
@@ -238,11 +252,83 @@ select:focus{
 	overflow: hidden !important;
 	text-overflow: ellipsis !important;
 }
+.form_style label strong,
+.form_style label b{
+	font-weight: var(--weight-label-bold);
+}
+
+/*************************/
+/* LABEL NORMAL - TEXAREA*/
+/*************************/
+.form_style textarea + label.elementor-field-label{ 
+	bottom: inherit !important;
+	top: var(--top-textarea) !important;
+    left: calc( 10px/2 + 10px) !important;
+	background-color: var(--bg-label) !important;
+}
 .form_style .input span{
 	left: 10px;
 }
 
-/* selector dropdown*/
+/**********************/
+/* INPUT ACTIVO */
+/**********************/
+.form_style input:focus,
+.form_style select:focus,
+.form_style textarea:focus{
+	border-color:  var(--color-border-input-focus) !important;
+	padding: var(--padding-input-focus) !important;
+}
+.form_style .active input{
+	border-color: var(--color-border-input-activo) !important;
+	padding: var(--padding-input-activo) !important;
+}
+
+/* Se muestra el placeholder cuando está en focus*/
+.form_style .active input::placeholder,
+.form_style input:focus::placeholder{
+	opacity: 0.3 !important;
+}
+
+/***************/
+/*LABEL ACTIVO */
+/***************/
+.jet-filter-label,
+.form_style .input span,/*Input file*/
+.form_style .active label,
+.form_style .elementor-field-type-select label,/*siempre activo*/
+.form_style .elementor-field-type-select.active label,
+.form_style .active textarea + label,
+.form_style textarea:focus + label,
+.form_style input:focus + label{
+	bottom: var(--bottom-label-activo) !important;
+	font-size: var(--fz-label-activo) !important;
+	font-weight: var(--weight-label-activo) !important;
+	color: var(--color-label-activo) !important;
+	background-color: var(--bg-label-activo) !important;
+}
+
+/*************************/
+/*LABEL ACTIVO - TEXTAREA*/
+/*************************/
+.form_style .active textarea + label,
+.form_style textarea:focus + label{
+	top: var(--top-textarea-activo) !important;
+	bottom: inherit !important;
+}
+
+/*activo en select de filtros jetFilter*/
+.jet-smart-filters-select.jet-filter{
+	position: relative;
+}
+.jet-filter-label{
+	left: 11px !important;
+	z-index: 2 !important;
+}
+
+/*******************/
+/* SELECT DROPDOWN */
+/*******************/
 .custom-a11yselect-container .custom-a11yselect-menu {
 	background: #f6f6f6;
 	display:none;
@@ -280,52 +366,6 @@ select:focus{
 	border-left:6px solid transparent;
 	border-right:6px solid transparent;
 }
-
-/**********************/
-/* INPUT ACTIVOS */
-/**********************/
-.form_style input:focus,
-.form_style select:focus,
-.form_style textarea:focus{
-	border-color:  none !important;
-}
-.form_style .active input{
-	border-color: none !important;
-}
-
-/* Se muestra el placeholder cuando está en focus*/
-.form_style .active input::placeholder,
-.form_style input:focus::placeholder{
-	opacity: 0 !important;
-}
-
-/* **********
- * LABEL ACTIVO
- * *********/
-.jet-filter-label,
-.form_style .input span,/*Input file*/
-.form_style .active label,
-.form_style .elementor-field-type-select label,/*siempre activo*/
-.form_style .elementor-field-type-select.active label,
-.form_style textarea:focus + label,
-.form_style input:focus + label{
-	bottom: var(--bottom-label-activo) !important;
-	font-size: var(--fz-label-activo) !important;
-	opacity: .8 !important;
-	font-weight: var(--weight-label-activo) !important;
-	color: var(--color-label-activo:);
-	
-}
-/*activo en select de filtros jetFilter*/
-.jet-smart-filters-select.jet-filter{
-	position: relative;
-}
-.jet-filter-label{
-	left: 11px !important;
-	z-index: 2 !important;
-}
-
-
 
 /**********************
  * CAMPOS RADIO 
@@ -444,18 +484,18 @@ select:focus{
  * **********/
 .form_style .elementor-field-type-html h4 *,
 .form_style .elementor-field-type-html h4{
-	text-transform: normal !important;
-	font-family: 'Barlow' !important;
+	text-transform: var(--text-transform-html) !important;
+	font-family: var(--font-family-html) !important;
 	margin: 20px 0px 0px 0px  !important;
 	padding: 10px 0px !important;
 	font-weight: bold !important;
 	font-size: 24px !important;
-	color: var(--e-global-color-primary) !important;
+	color: var(--color-h4-html) !important;
 	background: transparent;
 	border-radius: 0px;
 }
 .form_style .elementor-field-type-html h5{
-	font-family: 'Barlow' !important;
+	font-family: var(--font-family-html) !important;
 	font-weight: bold !important;
 	margin: 20px 0 20px 0 !important;
 }
@@ -469,7 +509,7 @@ select:focus{
 }
 
 .form_style .elementor-field-type-html p{
-	font-size: 13px !important;
+	font-size: var(--fz-parrafo-html) !important;
 }
 .form_style .elementor-field-type-html h5,
 .form_style .elementor-field-type-html p,
@@ -618,6 +658,3 @@ select:focus{
 	appearance: menulist-button !important;
 }
 
-.hide{
-	display: none !important;
-}
