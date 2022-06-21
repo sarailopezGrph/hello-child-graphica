@@ -107,3 +107,19 @@ img {
 .hide{
 	display: none !important;
 }
+
+/**************************/
+/*convertimos una inner-section en scroll en mobile*/
+/**************************/
+@media(max-width: 767px){
+	.scroll-box .elementor-widget-wrap{
+		overflow: hidden;
+		overflow-x: scroll;
+		display: flex;
+		flex-flow: row nowrap;
+		padding: 0 30px !important;
+	}
+	.scroll-box .elementor-widget-wrap .elementor-widget-image{
+		min-width: 200px !important;
+	}
+}
