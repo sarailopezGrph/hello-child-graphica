@@ -2,7 +2,7 @@
 
 //Theme Name: Newspaper Child theme
 
-//Template name: home-nuevo
+//Template name: Hoja-plantilla
 
 
 

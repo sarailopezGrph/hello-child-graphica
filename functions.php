@@ -26,14 +26,13 @@ add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 10 );
 
 // AGREGAR CUTOM JS/CSS
 function add_scripts_proyecto() {
-	wp_enqueue_script( 'script_select', get_stylesheet_directory_uri() . '/lib/form/select.js', array ( 'jquery' ));
-	wp_enqueue_script( 'script_form', get_stylesheet_directory_uri() . '/lib/form/form.js', array ( 'jquery' ));
+	wp_enqueue_script( 'script_select', get_stylesheet_directory_uri() . '/lib/select.js', array ( 'jquery' ));
+	wp_enqueue_script( 'script_form', get_stylesheet_directory_uri() . '/lib/form.js', array ( 'jquery' ));
 	wp_enqueue_script( 'script_custom', get_stylesheet_directory_uri() . '/custom.js', array ( 'jquery' ));
 	
 	// CSS
-    wp_enqueue_style( 'style_select',  get_stylesheet_directory_uri() . '/lib/form/select.css' );
-    wp_enqueue_style( 'style_form',  get_stylesheet_directory_uri() . '/lib/form/form.css' );
-   	wp_enqueue_style( 'style_slick',  get_stylesheet_directory_uri() . '/lib/user.css' );
+    wp_enqueue_style( 'style_form',  get_stylesheet_directory_uri() . '/lib/form.css' );
+   	wp_enqueue_style( 'style_slick',  get_stylesheet_directory_uri() . '/lib/app.css' );
 	
     wp_localize_script( 'script_custom', 'proyecto', [
         'is_mobile' => intval( wp_is_mobile() ),
@@ -50,29 +49,3 @@ add_filter('use_block_editor_for_post_type', '__return_false', 100);
 
 //-/QUITAR GUTENBERG
 
-
-// Elementor Forms Widget Activar Clases en input
-require_once('lib/form/class-input.php');
-
-//Funcion Extra editor custom para Elementor Forms
-add_action( 'elementor_pro/init', function() {
-    require_once( get_stylesheet_directory() . '/lib/form/html-form.php' );
-    new html_v2();
-} );
-
-
-// Obtener número de likes plugin Ulike por post
-
-add_shortcode('ulike_counter', 'ulike_counter');
-
-function ulike_counter(){
-	global $wpdb;
-	
-	$table = $wpdb->prefix . "ulike";
-	
-	$post = get_post();
-	$post_id = $post->ID;
-	$result = $wpdb->get_var("SELECT COUNT(*) FROM $table WHERE post_id = $post_id");
-	
-	return $result;
-}

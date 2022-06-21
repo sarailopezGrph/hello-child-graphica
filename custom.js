@@ -3,12 +3,7 @@
 (function($) {
 	$(document).ready(function() {
 		
-		// ****************************
-		// HOVER DE CAMPANA
-		// ****************************
-		$( document ).on('click', '.fechaSecc', function(){
-			$(this).stop(false).toggleClass('active');
-		});
+
 		
 		// ****************************
 		// QUITAR DRAG A LAS IMAGENES (+ CSS)
