@@ -1,0 +1,92 @@
+/**************************/
+/* Centrar contenido cunado el slider no se a armado */
+/**************************/
+.centrarS .jet-listing-grid__items{ 
+	justify-content: center !important;
+}
+/**************************/
+/*Añadir desborde al contenedor de los slides*/
+/**************************/
+.desbordarS .jet-listing-grid .slick-list,
+.desbordarS .slick-list.draggable,
+.desbordarS .elementor-main-swiper{
+	overflow: inherit !important;
+}
+/**************************/
+/*Ocultar slide desbordados - Solo para JetEngine*/
+/**************************/
+.ocultarS .jet-listing-grid__item.slick-slide{ opacity: 0 !important;}
+.ocultarS .jet-listing-grid__item.slick-active{ opacity: 1 !important;}
+.opacidadS .jet-listing-grid__item.slick-slide{ opacity: 0.3 !important;}
+.opacidadS .jet-listing-grid__item.slick-active{ opacity: 1 !important;}
+
+/**************************/
+/*Modificamos las Flechas de Control*/
+/**************************/
+.controlS .slick-arrow/*slide listing*/,
+.controlS .elementor-swiper-button/*slide Elem*/{
+	background: var(--e-global-color-text) !important;
+	box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25) !important;
+	border-radius: 50% !important;
+	padding: 0 !important;
+	width: 50px !important;
+	height: 50px !important;
+	transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+}
+.controlS .slick-arrow:hover,/*slide listing*/
+.controlS .elementor-swiper-button:hover/*slide Elem*/{
+	background: var(--e-global-color-text) !important;
+}
+.controlS .slick-arrow svg/*slide listing*/,
+.controlS .elementor-swiper-button svg/*slide Elem*/{
+	width: 20px !important;
+	height: 20px !important;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: auto;
+}
+
+/**************************/
+/* Ocultar las flechas cuando estan desabilitadas */
+/**************************/
+.jet-product-gallery-icon.swiper-button-disabled,
+.controlS .slick-disabled/*slide listing*/,
+.controlS .swiper-button-disabled/*slide Elem*/{
+	opacity: 0 !important;
+	visibility: hidden !important;
+}
+
+/**************************/
+/*Modificamos los Bullets de Control*/
+/**************************/
+.controlS .jet-slick-dots li,/*slide Listing*/
+.controlS .swiper-pagination-bullet/*slide Elem*/{
+	border-radius: 5px !important;
+	height: 10px !important;
+	width: 10px !important;
+	background: white !important;
+	opacity: .8 !important;
+	transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+}
+.controlS .jet-slick-dots li.slick-active,/*slide Listing*/
+.controlS .swiper-pagination-bullet-active/*slide Elem*/{
+	background: var(--e-global-color-secondary) !important;
+	opacity: 1 !important;
+	width: 30px !important;
+}
+
+/**************************/
+/* Achicamos las flechas en mobile*/
+/**************************/
+@media (max-width: 1024px){
+	.controlS .jet-listing-grid__slider-icon.slick-arrow,
+	.controlS .elementor-swiper-button/*slide Elem*/{
+		width: 35px !important;
+		height: 35px !important;
+	}
+}
